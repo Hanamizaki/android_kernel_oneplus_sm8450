@@ -939,9 +939,21 @@ static int qpnp_tm_probe(struct platform_device *pdev)
 	INIT_DELAYED_WORK(&chip->ref_byp_detect_work, qpnp_tm_ref_byp_detect_work);
 #endif
 
+<<<<<<< HEAD
 	ret = devm_request_threaded_irq(&pdev->dev, chip->irq, NULL,
 					qpnp_tm_isr, IRQF_ONESHOT,
 					node->name, chip);
+=======
+#ifdef OPLUS_FEATURE_CHG_BASIC
+	chip->need_check_ref_byp = of_property_read_bool(node, "qcom,need_check_ref_byp");
+	if (chip->need_check_ref_byp)
+		dev_err(&pdev->dev, "need to check ref_byp\n");
+	INIT_DELAYED_WORK(&chip->ref_byp_detect_work, qpnp_tm_ref_byp_detect_work);
+#endif
+
+	ret = devm_request_threaded_irq(&pdev->dev, irq, NULL, qpnp_tm_isr,
+					IRQF_ONESHOT, node->name, chip);
+>>>>>>> a4732c1d610b (treewide: Import minimal changes from OnePlus NE2215_14.0.0.202(EX01))
 	if (ret < 0)
 		return ret;
 

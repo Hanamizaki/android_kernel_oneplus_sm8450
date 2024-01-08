@@ -4545,7 +4545,11 @@ static int dwc3_msm_set_role(struct dwc3_msm *mdwc, enum usb_role role)
 		return -EINVAL;
 
 	mutex_lock(&mdwc->role_switch_mutex);
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> a4732c1d610b (treewide: Import minimal changes from OnePlus NE2215_14.0.0.202(EX01))
 #ifdef OPLUS_FEATURE_CHG_BASIC
 	if (oplus_dwc3_need_set_usbphy_hz() == true && role != USB_ROLE_NONE) {
 		pr_err("!!!ignore the notify to start USB device mode");

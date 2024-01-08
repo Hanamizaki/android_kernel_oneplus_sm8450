@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 subdir-ccflags-y += -Wall -Werror -Wno-unused-but-set-variable -DCONFIG_RT_REGMAP
+=======
+subdir-ccflags-y += -Wall -Werror -DCONFIG_RT_REGMAP
+>>>>>>> a4732c1d610b (treewide: Import minimal changes from OnePlus NE2215_14.0.0.202(EX01))
 #obj-$(CONFIG_DUAL_ROLE_USB_INTF)	+= tcpci_dual_role.o
 #obj-$(CONFIG_TCPC_RT1711H)		+= tcpc_rt1711h.o
 #obj-$(CONFIG_TCPC_CLASS)		+= tcpci_core.o tcpci_typec.o tcpci_timer.o \
